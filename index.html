@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Danny Sellers | Django Developer</title>
+	<meta name="description" content="Danny Sellers personal portfolio">
+	<meta name="author" content="Danny Sellers">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<!--<script src="js/jquery-1.11.2.min.js"></script>-->
+
+	<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+<div class="container">
+	<div class="navbar-spacer"></div>
+	<nav class="navbar">
+		<div class="container">
+			<ul class="navbar-list">
+				<li class="navbar-item"><a class="navbar-link" href="#top">Home</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#portfolio">Portfolio</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#skills">Skills</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#contact">Contact Me</a></li>
+				<li class="navbar-item">
+					<a class="navbar-link" href="#" data-popover="#moreNavPopover">More</a>
+
+					<div id="moreNavPopover" class="popover">
+						<ul class="popover-list">
+							<li class="popover-item">
+								<a class="popover-link" href="https://github.com/dannysellers">Github</a>
+							</li>
+							<li class="popover-item">
+								<a class="popover-link" href="http://www.linkedin.com/pub/daniel-sellers">LinkedIn</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Headshot area -->
+	<div class="row">
+		<div class="five columns">
+			<img src="img/headshot.jpeg" id="headshot">
+		</div>
+
+		<div class="seven columns">
+			<h2 class="title">Danny Sellers</h2>
+
+			<p>Hi! That's me, on the left there.</p>
+
+			<p>I'm an aspiring Django developer based out of Portland, OR. I'm currently a student
+			   at <a href="http://pdxcodeguild.com">PDX Code Guild</a>, where I've been working on some cool
+			   projects.</p>
+
+			<p>Ultimately, I hope to work with an organization that helps underserved communities through principles of
+			   social
+			   enterprise, and uses software-based tools to help overcome social problems. I am specifically interested
+			   in
+			   back-end development of software applications to affect positive change.</p>
+		</div>
+	</div>
+
+	<!-- Portfolio -->
+	<div class="docs-section" id="portfolio">
+		<h4 class="docs-header">Portfolio</h4>
+
+		<div class="row">
+			<div class="four columns">
+				<span class="project-span" id="rapidsms_locator">
+					<a href="https://github.com/dannysellers/rapidsms_service-locator">SMS-based Service Locator</a>
+				</span><br/>
+				<strong>Tools used:</strong>
+				<ul>
+					<li>Django</li>
+					<li>RapidSMS</li>
+				</ul>
+			</div>
+			<div class="eight columns">
+				<p>This tool is designed to allow people living in temporary settlements to locate resources and
+				   services near them. To compensate for how inconvenient it is for SMS messages to carry positional
+				   data, it relies on the concept of a 'beacon'&#8212;a point from which directions
+				   may be calculated.</p>
+
+				<p><i>Planned functionality:</i> graphic reports on query metrics, scheduled monitoring and
+												 threshold-based alerts.</p>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="row">
+			<div class="four columns">
+				<span class="project-span" id="django_order">
+					<a href="https://github.com/dannysellers/django_orders">Order Fulfillment Inventory Tracker</a>
+				</span><br/>
+				<strong>Tools used:</strong>
+				<ul>
+					<li>Django</li>
+					<li>PostgreSQL</li>
+				</ul>
+			</div>
+			<div class="eight columns">
+				<p>This tool is intended for tracking accounts and inventory for customers of an order fulfillment
+				   business. It supports tracking accounts, shipments containing cartons, status change operations, and
+				   costs for billing purposes.</p>
+
+				<p><i>Planned functionality:</i> generate PDF invoices, API-based connection to
+												 front-end site.</p>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="row">
+			<div class="four columns">
+				<span class="project-span" id="thesis">
+					<a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>
+						Accountability Without Democracy: Lessons from African Famines in the 1980s</a>
+				</span><!-- <br/>
+				<strong>Tools used:</strong>
+				<ul>
+					<li>Research skills</li>
+					<li>LaTeX</li>
+				</ul> -->
+			</div>
+			<div class="eight columns">
+				<p>This work investigates the theoretical correlation between a country’s freedom of press, competitive
+				   elections, and their ability to avert famine, elucidating a theory from development economist Amartya
+				   Sen.</p>
+
+				<p>Initally written during my final year at Reed College, this paper it served as my senior thesis.
+				   More recently, it was
+					<a href="http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/">published</a>
+				   in the Spring 2014 edition of the Columbia Journal of Politics & Society.
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Experience -->
+	<div class="docs-section" id="skills">
+		<h4 class="docs-header">Skills</h4>
+
+		<div class="row">
+			<div class="five columns chart">
+				<div class="chart-bar" style="width: 65%">Python</div>
+				<div class="chart-bar" style="width: 62%">Django</div>
+				<div class="chart-bar" style="width: 53%">HTML</div>
+				<div class="chart-bar" style="width: 47%">CSS</div>
+				<div class="chart-bar" style="width: 47%">Javascript</div>
+				<br/>
+
+				<div class="chart-bar" style="width: 79%">Research</div>
+				<div class="chart-bar" style="width: 71%">Writing</div>
+			</div>
+
+			<div class="seven columns" id="chart-text">
+				<p>Move your mouse over one my skills listed at left to see more information.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact form -->
+	<div class="docs-section" id="contact">
+		<h4 class="docs-header">Contact Me</h4>
+
+		<p>Send me a message at dsellers90 [at] gmail [dot] com, and I promise to respond like a real person!</p>
+
+		<!--<form id="contact-form">-->
+			<!--<div class="row">-->
+				<!--<div class="six columns">-->
+					<!--<label for="emailInput">Your email</label>-->
+					<!--<input class="u-full-width" type="email" placeholder="email@address.com" id="emailInput">-->
+				<!--</div>-->
+				<!--<div class="six columns">-->
+					<!--<label for="recipientInput">Reason for contacting</label>-->
+					<!--<select class="u-full-width" id="recipientInput">-->
+						<!--<option value="Option 1">I'd like to hire you!</option>-->
+						<!--<option value="Option 2">Question</option>-->
+					<!--</select>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<label for="messageInput">Message</label>-->
+			<!--<textarea class="u-full-width" placeholder="Hi Danny &hellip;" id="messageInput"></textarea>-->
+			<!--<button class="button-primary styled" type="submit" id="email-submit" value="submit">&#xf003 Submit</button>-->
+		<!--</form>-->
+	</div>
+</div>
+
+<script src="js/site.js"></script>
+
+<script>
+
+	bars = document.getElementsByClassName('chart')[0].children;
+	descriptionElement = document.getElementById('chart-text');
+	chart_dict = {
+		'python': "I've been working with Python since the middle of 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I have learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
+		'django': "Since starting at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
+		'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages like Django's, though, has been incredibly empowering.",
+		'css': "Although my CSS is not quite as solid as my HTML, I've never had difficulty getting the job done. The speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
+		'javascript': "Learning Javascript has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
+		'research': "During my time at Reed College (2009--2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
+		'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers). For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
+	};
+
+	$(".chart-bar").mouseover(function () {
+		chartText(this);
+	}).hover(
+			function () {
+				this.style.backgroundColor = "#406490";
+			}, function () {
+				this.style.backgroundColor = "steelblue";
+			}
+	);
+
+	function chartText(bar) {
+		var key = bar.innerHTML.toLowerCase();
+		descriptionElement.innerHTML = "<p>" + chart_dict[key] + "</p>";
+	}
+
+//	$("#email-submit").click(function () {
+//		this.preventDefault();
+//		var emailForm = document.forms[0];
+//		var elements = emailForm.elements;
+//		var email = elements[0].value;
+//		var subjectSelect = elements[1];
+//		var subject = subjectSelect[subjectSelect.selectedIndex].text;
+//		var message = email + " contacted you to say: " + elements[2].value;
+//
+//		var emailLink = 'mailto:?subject="'
+//				+ encodeURIComponent(subject)
+//				+ '&body="'
+//				+ encodeURIComponent(message) + '"';
+//		window.location.href = emailLink;
+//	});
+
+</script>
+
+<!-- Google Analytics -->
+<script>
+	(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-31942007-3', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
