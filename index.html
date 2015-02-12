@@ -11,9 +11,13 @@
 
 	<link href="http://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<!--<script src="js/jquery-1.11.2.min.js"></script>-->
+	<script type="text/javascript">
+		if (typeof jQuery == 'undefined') {
+			document.write(unescape("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+		}
+	</script>
 
-	<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/site.css">
@@ -174,26 +178,35 @@
 	<div class="docs-section" id="contact">
 		<h4 class="docs-header">Contact Me</h4>
 
-		<p>Send me a message at dsellers90 [at] gmail [dot] com, and I promise to respond like a real person!</p>
+		<div class="mail-alert" style="display: none;"></div>
 
-		<!--<form id="contact-form">-->
-			<!--<div class="row">-->
-				<!--<div class="six columns">-->
-					<!--<label for="emailInput">Your email</label>-->
-					<!--<input class="u-full-width" type="email" placeholder="email@address.com" id="emailInput">-->
-				<!--</div>-->
-				<!--<div class="six columns">-->
-					<!--<label for="recipientInput">Reason for contacting</label>-->
-					<!--<select class="u-full-width" id="recipientInput">-->
-						<!--<option value="Option 1">I'd like to hire you!</option>-->
-						<!--<option value="Option 2">Question</option>-->
-					<!--</select>-->
-				<!--</div>-->
-			<!--</div>-->
-			<!--<label for="messageInput">Message</label>-->
-			<!--<textarea class="u-full-width" placeholder="Hi Danny &hellip;" id="messageInput"></textarea>-->
-			<!--<button class="button-primary styled" type="submit" id="email-submit" value="submit">&#xf003 Submit</button>-->
-		<!--</form>-->
+		<p>Send me a message, and I promise to respond like a real person!</p>
+
+		<form id="contact-form" method="post" action="">
+			<div class="row">
+				<div class="four columns">
+					<label for="emailInput">Your email</label>
+					<input class="u-full-width" type="email" placeholder="email@address.com" id="emailInput">
+				</div>
+				<div class="four columns">
+					<label for="nameInput">Your name</label>
+					<input class="u-full-width" type="text" placeholder="Your name" id="nameInput">
+				</div>
+				<div class="four columns">
+					<label for="recipientInput">Reason for contacting</label>
+					<select class="u-full-width" id="recipientInput">
+						<option value="Option 1">I'd like to hire you!</option>
+						<option value="Option 2">Question</option>
+					</select>
+				</div>
+			</div>
+			<label for="messageInput">Message</label>
+			<textarea class="u-full-width" placeholder="Hi Danny &hellip;" id="messageInput"></textarea>
+
+			<div class="submit">
+				<input type="submit" id="email-submit" class="button-primary fa-styled submit" value="&#xf003 Submit"/>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -209,7 +222,7 @@
 		'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages like Django's, though, has been incredibly empowering.",
 		'css': "Although my CSS is not quite as solid as my HTML, I've never had difficulty getting the job done. The speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
 		'javascript': "Learning Javascript has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
-		'research': "During my time at Reed College (2009--2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
+		'research': "During my time at Reed College (2009&ndash;2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
 		'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers). For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
 	};
 
@@ -228,21 +241,55 @@
 		descriptionElement.innerHTML = "<p>" + chart_dict[key] + "</p>";
 	}
 
-//	$("#email-submit").click(function () {
-//		this.preventDefault();
-//		var emailForm = document.forms[0];
-//		var elements = emailForm.elements;
-//		var email = elements[0].value;
-//		var subjectSelect = elements[1];
-//		var subject = subjectSelect[subjectSelect.selectedIndex].text;
-//		var message = email + " contacted you to say: " + elements[2].value;
-//
-//		var emailLink = 'mailto:?subject="'
-//				+ encodeURIComponent(subject)
-//				+ '&body="'
-//				+ encodeURIComponent(message) + '"';
-//		window.location.href = emailLink;
-//	});
+	$("#contact-form").submit(function () {
+		var elements = this.elements;
+		var email = elements[0].value;
+		var subjectSelect = elements[2];
+		var subject = subjectSelect[subjectSelect.selectedIndex].text;
+		var name = elements[1].value;
+		subject = name + " contacted you to say: " + subject;
+		var message = elements[3].value;
+		var mailAlert = document.getElementsByClassName('mail-alert')[0];
+
+		$.ajax({
+			type: "POST",
+			url: "https://mandrillapp.com/api/1.0/messages/send.json",
+			data: {
+				key: "LX6mzvXMtEhatC93K-NQXA",
+				message: {
+					"html": "<p>" + message + "</p>",
+					"text": message,
+					"subject": subject,
+					"from_email": email,
+					"from_name": name,
+					"to": [
+						{
+							"email": "dsellers90@gmail.com",
+							"name": "Danny Sellers",
+							"type": "to"
+						}
+					],
+					"headers": {
+						"Reply-To": email
+					}
+				}
+			},
+			success: function (response) {
+				mailAlert.style.display = 'block';
+				mailAlert.innerText = "Thanks for sending me an email! I'll respond as soon as possible.";
+			},
+
+			error: function (xhr, status, errorThrown) {
+				mailAlert.style.backgroundColor = '#FF858F';
+				mailAlert.style.display = 'block';
+				mailAlert.innerText = "Sorry, there was a problem! (" + errorThrown + ")";
+				console.log("Error: " + errorThrown);
+				console.log("Status: " + status);
+				console.dir(xhr);
+			}
+		});
+		return false;
+	});
 
 </script>
 
