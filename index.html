@@ -17,11 +17,31 @@
 		}
 	</script>
 	<script src="js/jquery.validate.js"></script>
+	<script src="js/detectmobilebrowser.js"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/site.css">
+
+	<!-- Google Analytics -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-31942007-3', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 
 </head>
 <body>
@@ -158,15 +178,15 @@
 
 		<div class="row">
 			<div class="five columns chart">
-				<div class="chart-bar" style="width: 65%">Python</div>
-				<div class="chart-bar" style="width: 62%">Django</div>
-				<div class="chart-bar" style="width: 53%">HTML</div>
-				<div class="chart-bar" style="width: 47%">CSS</div>
-				<div class="chart-bar" style="width: 47%">Javascript</div>
+				<div class="chart-bar" style="width: 70%">Python</div>
+				<div class="chart-bar" style="width: 60%">Django</div>
+				<div class="chart-bar" style="width: 50%">HTML</div>
+				<div class="chart-bar" style="width: 40%">CSS</div>
+				<div class="chart-bar" style="width: 40%">Javascript</div>
 				<br/>
 
-				<div class="chart-bar" style="width: 79%">Research</div>
-				<div class="chart-bar" style="width: 71%">Writing</div>
+				<div class="chart-bar" style="width: 80%">Research</div>
+				<div class="chart-bar" style="width: 70%">Writing</div>
 			</div>
 
 			<div class="seven columns" id="chart-text">
@@ -227,8 +247,8 @@
 		'python': "I've been working with Python since the middle of 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I have learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
 		'django': "Since starting at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
 		'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages like Django's, though, has been incredibly empowering.",
-		'css': "Although my CSS is not quite as solid as my HTML, I've never had difficulty getting the job done. The speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
-		'javascript': "Learning Javascript has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
+		'css': "Although CSS can be... unpredictable at times, I've never had too much difficulty getting the job done. Also, the speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
+		'javascript': "Learning Javascript (and jQuery) has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
 		'research': "During my time at Reed College (2009&ndash;2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
 		'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers). For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
 	};
@@ -244,7 +264,18 @@
 			}
 	);
 
+	function chartText() {
+		// Changes the chart text based to match the interaction method.
+		if (jQuery.browser.mobile) {
+			$("#chart-text").html("<p>Tap on one my skills listed at left to see more information.</p>")
+		} else {
+			$("#chart-text").html("<p>Move your mouse over one my skills listed at left to see more information.</p>")
+		}
+	}
+
 	$().ready(function () {
+		chartText();
+
 		// Validate the form when it's submitted
 		$("#contact-form").validate({
 			invalidHandler: function (event, validator) {
@@ -259,77 +290,52 @@
 				}
 			},
 			submitHandler: function () {
-				submitForm();
+				formSubmit();
 			}
 		});
 	});
 
-	function submitForm() {
-		var elements = document.forms[0].elements;
-		var email = elements[0].value;
-		var subjectSelect = elements[2];
-		var subject = subjectSelect[subjectSelect.selectedIndex].text;
-		var name = elements[1].value;
-		subject = name + " contacted you to say: " + subject;
-		var message = elements[3].value;
+	function formSubmit() {
+		var email = $("#emailInput").val();
+		var name = $("#nameInput").val();
+		var reason = $("#recipientInput option:selected").text();
+		var subject = name + " contacted you to say: " + reason;
+		var message = $("#messageInput").val();
 		$.ajax({
 			type: "POST",
 			url: "https://mandrillapp.com/api/1.0/messages/send.json",
 			data: {
-				key: "LX6mzvXMtEhatC93K-NQXA",
-				message: {
-					"html": "<p>" + message + "</p>",
-					"text": message,
-					"subject": subject,
-					"from_email": email,
-					"from_name": name,
-					"to": [
-						{
-							"email": "dsellers90@gmail.com",
-							"name": "Danny Sellers",
-							"type": "to"
-						}
-					],
-					"headers": {
-						"Reply-To": email
-					}
+				'key': "LX6mzvXMtEhatC93K-NQXA",
+				'message': {
+					'from_email': email,
+					'from_name': name,
+					'headers': {
+						'Reply-To': email
+					},
+					'subject': subject,
+					'text': message,
+					'to': [{
+						'email': 'dsellers90@gmail.com',
+						'name': 'Danny Sellers',
+						'type': 'to'
+					}]
 				}
-			},
-			success: function (response) {
-				$('.mail-alert').html("Thanks for sending me an email! I'll respond as soon as possible.")
-						.show();
-			},
-			error: function (xhr, status, errorThrown) {
-				$('.mail-alert').css('background-color', '#FF858F')
-						.html("Sorry, there was a problem! (" + errorThrown + ")<br/>Please feel free to email me directly at dsellers90 [at] gmail [dot] com.")
-						.show();
-				console.log("Error: " + errorThrown);
-				console.log("Status: " + status);
-				console.dir(xhr);
 			}
+		}).done(function (response) {
+			$('.mail-alert').html("Thanks for sending me an email! I'll respond as soon as possible.")
+					.css('background-color', '#FF858F')
+					.show();
+			// Reset fields after successful submission
+			$("#emailInput").val('');
+			$("#nameInput").val('');
+			$("#messageInput").val('');
+		}).fail(function (jqXHR, textStatus, errorThrown) {
+			$('.mail-alert').css('background-color', '#FF858F')
+					.html("Sorry, there was a problem! (" + textStatus + ")<br/>Please feel free to email me directly at dsellers90 [at] gmail [dot] com.")
+					.show();
 		});
 		return false;
 	}
-
-</script>
-
-<!-- Google Analytics -->
-<script>
-	(function (i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r;
-		i[r] = i[r] || function () {
-			(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date();
-		a = s.createElement(o),
-				m = s.getElementsByTagName(o)[0];
-		a.async = 1;
-		a.src = g;
-		m.parentNode.insertBefore(a, m)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-	ga('create', 'UA-31942007-3', 'auto');
-	ga('send', 'pageview');
-
 </script>
 
 </body>

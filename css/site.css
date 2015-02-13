@@ -71,6 +71,12 @@ body {
 	height : 70px;
 }
 
+.chart {
+	border-left : 0.1em solid rgb(65, 64, 66);
+	padding     : 5px 5px 17px;
+	background  : #ffffff url('../img/chart-bottom.svg') bottom left no-repeat;
+}
+
 .chart div {
 	font             : 14px 'Arimo', sans-serif;
 	background-color : steelblue;
@@ -128,8 +134,8 @@ body {
 	}
 
 	#headshot {
-		width  : 10rem;
-		height : 10rem;
+		width  : 12rem;
+		height : 12rem;
 	}
 }
 
