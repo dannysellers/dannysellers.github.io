@@ -1,44 +1,18 @@
 $(document).ready(function () {
-	// TODO: Trim unused functions
 
 	// Variables
-	var $codeSnippets = $('.code-example-body'),
-		$nav = $('.navbar'),
+	var $nav = $('.navbar'),
 		$body = $('body'),
 		$window = $(window),
 		$popoverLink = $('[data-popover]'),
 		navOffsetTop = $nav.offset().top,
-		$document = $(document),
-		entityMap = {
-			"&": "&amp;",
-			"<": "&lt;",
-			">": "&gt;",
-			'"': '&quot;',
-			"'": '&#39;',
-			"/": '&#x2F;'
-		}
+		$document = $(document);
 
 	function init() {
 		$window.on('scroll', onScroll);
 		$window.on('resize', resize);
 		$popoverLink.on('click', openPopover);
 		$document.on('click', closePopover);
-		$('a[href^="#"]').on('click', smoothScroll);
-		buildSnippets();
-	}
-
-	function smoothScroll(e) {
-		e.preventDefault();
-		$(document).off("scroll");
-		var target = this.hash,
-			menu = target;
-		$target = $(target);
-		$('html, body').stop().animate({
-			'scrollTop': $target.offset().top - 40
-		}, 0, 'swing', function () {
-			window.location.hash = target;
-			$(document).on("scroll", onScroll);
-		});
 	}
 
 	function openPopover(e) {
@@ -76,20 +50,104 @@ $(document).ready(function () {
 		}
 	}
 
-	function escapeHtml(string) {
-		return String(string).replace(/[&<>"'\/]/g, function (s) {
-			return entityMap[s];
-		});
-	}
-
-	function buildSnippets() {
-		$codeSnippets.each(function () {
-			var newContent = escapeHtml($(this).html());
-			$(this).html(newContent)
-		})
-	}
-
-
 	init();
 
 });
+
+$(function () {
+	// from http://css-tricks.com/snippets/jquery/smooth-scrolling/
+	$('a[href*=#]:not([href=#])').click(function () {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top - 10
+				}, 500);
+				return false;
+			}
+		}
+	});
+});
+
+chart_dict = {
+	'python': "I've been working with Python since 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I have learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
+	'django': "Since starting at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
+	'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages like Django's, though, has been incredibly empowering.",
+	'css': "Although CSS can be... unpredictable at times, I've never had too much difficulty getting the job done. Also, the speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
+	'javascript': "Learning Javascript (including jQuery and AJAX) has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
+	'research': "During my time at Reed College (2009&ndash;2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
+	'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers). For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
+};
+
+$(".chart-bar").mouseover(function () {
+	var key = this.innerHTML.toLowerCase();
+	$("#chart-text").html("<p>" + chart_dict[key] + "</p>");
+}).hover(
+	function () {
+		this.style.backgroundColor = "steelblue";
+	}, function () {
+		this.style.backgroundColor = "#3e5d88";
+	}
+);
+
+// Validate the form when it's submitted
+$("#contact-form").validate({
+	invalidHandler: function (event, validator) {
+		var errors = validator.numberOfInvalids();
+		if (errors) {
+			var message = errors == 1
+				? "Oops, looks like you missed a field!"
+				: "Looks like there're a couple issues with the form.";
+			$('.mail-alert').html(message)
+				.css('background-color', '#FF858F')
+				.show();
+		}
+	},
+	submitHandler: function () {
+		$('.mail-alert').css('background-color', "#EEEEEE");
+		formSubmit();
+	}
+});
+
+function formSubmit() {
+	var email = $("#emailInput").val();
+	var name = $("#nameInput").val();
+	var reason = $("#recipientInput option:selected").text();
+	var subject = name + " contacted you to say: " + reason;
+	var message = $("#messageInput").val();
+	$.ajax({
+		type: "POST",
+		url: "https://mandrillapp.com/api/1.0/messages/send.json",
+		data: {
+			'key': "LX6mzvXMtEhatC93K-NQXA",
+			'message': {
+				'from_email': email,
+				'from_name': name,
+				'headers': {
+					'Reply-To': email
+				},
+				'subject': subject,
+				'text': message,
+				'to': [{
+					'email': 'dsellers90@gmail.com',
+					'name': 'Danny Sellers',
+					'type': 'to'
+				}]
+			}
+		}
+	}).done(function (response) {
+		$('.mail-alert').html("Thanks for sending me an email! I'll respond as soon as possible.")
+			.css('background-color', '#FF858F')
+			.show();
+		// Reset fields after successful submission
+		$("#emailInput").val('');
+		$("#nameInput").val('');
+		$("#messageInput").val('');
+	}).fail(function (jqXHR, textStatus, errorThrown) {
+		$('.mail-alert').css('background-color', '#FF858F')
+			.html("Sorry, there was a problem! (" + textStatus + ")<br/>Please feel free to email me directly at dsellers90 [at] gmail [dot] com.")
+			.show();
+	});
+	return false;
+}

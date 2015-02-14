@@ -17,10 +17,10 @@ body {
 
 #headshot {
 	border-radius    : 50%;
-	border           : 10px solid #2c3e50;
+	border           : 10px solid #3e5d88;
 	width            : 15rem;
 	height           : 15rem;
-	background-color : #ffffff;
+	background-color : #3e5d88;
 }
 
 .fa-styled {
@@ -79,7 +79,7 @@ body {
 
 .chart div {
 	font             : 14px 'Arimo', sans-serif;
-	background-color : steelblue;
+	background-color : #3e5d88;
 	text-align       : right;
 	padding          : 0.35rem 1rem;
 	margin           : 2px;

@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {
 			document.write(unescape("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
@@ -45,7 +45,7 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container" id="top">
 	<div class="navbar-spacer"></div>
 	<nav class="navbar">
 		<div class="container">
@@ -53,6 +53,7 @@
 				<li class="navbar-item"><a class="navbar-link" href="#top">Home</a></li>
 				<li class="navbar-item"><a class="navbar-link" href="#portfolio">Portfolio</a></li>
 				<li class="navbar-item"><a class="navbar-link" href="#skills">Skills</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#education">Education</a></li>
 				<li class="navbar-item"><a class="navbar-link" href="#contact">Contact Me</a></li>
 				<li class="navbar-item">
 					<a class="navbar-link" href="#" data-popover="#moreNavPopover">More</a>
@@ -85,13 +86,11 @@
 
 			<p>I'm an aspiring Django developer based out of Portland, OR. I'm currently a student
 			   at <a href="http://pdxcodeguild.com">PDX Code Guild</a>, where I've been working on some cool
-			   projects.</p>
+			   projects over the last few months.</p>
 
 			<p>Ultimately, I hope to work with an organization that helps underserved communities through principles of
-			   social
-			   enterprise, and uses software-based tools to help overcome social problems. I am specifically interested
-			   in
-			   back-end development of software applications to affect positive change.</p>
+			   social enterprise, and uses software-based tools to help overcome social problems. I am specifically
+			   interested in back-end development on projects that affect positive change.</p>
 		</div>
 	</div>
 
@@ -108,13 +107,14 @@
 				<ul>
 					<li>Django</li>
 					<li>RapidSMS</li>
+					<!--<li><a href="https://www.rapidsms.org">RapidSMS</a></li>-->
 				</ul>
 			</div>
 			<div class="eight columns">
 				<p>This tool is designed to allow people living in temporary settlements to locate resources and
-				   services near them. To compensate for how inconvenient it is for SMS messages to carry positional
-				   data, it relies on the concept of a 'beacon'&#8212;a point from which directions
-				   may be calculated.</p>
+				   services near them. To compensate for how inconvenient it is to send positional data over SMS,
+				   this project relies on the concept of a 'beacon'&#8212;a point from which directions are
+				   calculated.</p>
 
 				<p><i>Planned functionality:</i> graphic reports on query metrics, scheduled monitoring and
 												 threshold-based alerts.</p>
@@ -195,6 +195,24 @@
 		</div>
 	</div>
 
+	<!-- Education -->
+	<div class="docs-section" id="education">
+		<h4 class="docs-header">Education</h4>
+
+		<div class="row">
+			<h5>PDX Code Guild</h5>
+
+			<p>This four-month course has been an intensive hands-on experience&#8212;I've learned about Python and
+			   Django, HTML, CSS, Javascript, and some SQL. To see some examples of my work, be sure to check out my
+				<a href="#portfolio">Portfolio</a> or my <a href="https://github.com/dannysellers">Github profile</a>.</p>
+			<hr/>
+
+			<h5>Reed College</h5>
+			B.A., Political Science<br/>
+			May 2013
+		</div>
+	</div>
+
 	<!-- Contact form -->
 	<div class="docs-section" id="contact">
 		<h4 class="docs-header">Contact Me</h4>
@@ -220,14 +238,15 @@
 						   data-msg-required="">
 				</div>
 				<div class="four columns">
-					<label for="recipientInput">Reason for contacting</label>
+					<label for="recipientInput">Hi, I'd like to&hellip;</label>
 					<select class="u-full-width" id="recipientInput">
-						<option value="Option 1">I'd like to hire you!</option>
-						<option value="Option 2">Question</option>
+						<option value="hire-me-plz">...hire you immediately!</option>
+						<option value="question">...ask you a question.</option>
+						<option value="hello">...just say hi!</option>
 					</select>
 				</div>
 			</div>
-			<label for="messageInput">Message</label>
+			<label for="messageInput">Please, go on:</label>
 			<textarea class="u-full-width" placeholder="Hi Danny &hellip;" id="messageInput"></textarea>
 
 			<div class="submit">
@@ -241,101 +260,15 @@
 
 <script>
 
-	bars = document.getElementsByClassName('chart')[0].children;
-	descriptionElement = document.getElementById('chart-text');
-	chart_dict = {
-		'python': "I've been working with Python since the middle of 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I have learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
-		'django': "Since starting at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
-		'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages like Django's, though, has been incredibly empowering.",
-		'css': "Although CSS can be... unpredictable at times, I've never had too much difficulty getting the job done. Also, the speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
-		'javascript': "Learning Javascript (and jQuery) has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
-		'research': "During my time at Reed College (2009&ndash;2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
-		'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers). For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
-	};
-
-	$(".chart-bar").mouseover(function () {
-		var key = this.innerHTML.toLowerCase();
-		descriptionElement.innerHTML = "<p>" + chart_dict[key] + "</p>";
-	}).hover(
-			function () {
-				this.style.backgroundColor = "#406490";
-			}, function () {
-				this.style.backgroundColor = "steelblue";
-			}
-	);
-
-	function chartText() {
+	$().ready(function () {
 		// Changes the chart text based to match the interaction method.
 		if (jQuery.browser.mobile) {
 			$("#chart-text").html("<p>Tap on one my skills listed at left to see more information.</p>")
 		} else {
 			$("#chart-text").html("<p>Move your mouse over one my skills listed at left to see more information.</p>")
 		}
-	}
-
-	$().ready(function () {
-		chartText();
-
-		// Validate the form when it's submitted
-		$("#contact-form").validate({
-			invalidHandler: function (event, validator) {
-				var errors = validator.numberOfInvalids();
-				if (errors) {
-					var message = errors == 1
-							? "Oops, looks like you missed a field!"
-							: "Looks like there're a couple issues with the form.";
-					$('.mail-alert').html(message)
-							.css('background-color', '#FF858F')
-							.show();
-				}
-			},
-			submitHandler: function () {
-				formSubmit();
-			}
-		});
 	});
 
-	function formSubmit() {
-		var email = $("#emailInput").val();
-		var name = $("#nameInput").val();
-		var reason = $("#recipientInput option:selected").text();
-		var subject = name + " contacted you to say: " + reason;
-		var message = $("#messageInput").val();
-		$.ajax({
-			type: "POST",
-			url: "https://mandrillapp.com/api/1.0/messages/send.json",
-			data: {
-				'key': "LX6mzvXMtEhatC93K-NQXA",
-				'message': {
-					'from_email': email,
-					'from_name': name,
-					'headers': {
-						'Reply-To': email
-					},
-					'subject': subject,
-					'text': message,
-					'to': [{
-						'email': 'dsellers90@gmail.com',
-						'name': 'Danny Sellers',
-						'type': 'to'
-					}]
-				}
-			}
-		}).done(function (response) {
-			$('.mail-alert').html("Thanks for sending me an email! I'll respond as soon as possible.")
-					.css('background-color', '#FF858F')
-					.show();
-			// Reset fields after successful submission
-			$("#emailInput").val('');
-			$("#nameInput").val('');
-			$("#messageInput").val('');
-		}).fail(function (jqXHR, textStatus, errorThrown) {
-			$('.mail-alert').css('background-color', '#FF858F')
-					.html("Sorry, there was a problem! (" + textStatus + ")<br/>Please feel free to email me directly at dsellers90 [at] gmail [dot] com.")
-					.show();
-		});
-		return false;
-	}
 </script>
 
 </body>
