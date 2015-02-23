@@ -71,13 +71,13 @@ $(function () {
 });
 
 chart_dict = {
-	'python': "I've been working with Python since 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I have learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
-	'django': "Since starting at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
-	'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages like Django's, though, has been incredibly empowering.",
-	'css': "Although CSS can be... unpredictable at times, I've never had too much difficulty getting the job done. Also, the speed with which small CSS changes make noticeable differences makes it all the more enjoyable.",
-	'javascript': "Learning Javascript (including jQuery and AJAX) has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
+	'python': "I've been working with Python since 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
+	'django': "Since studying at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
+	'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages and server-side scripting, though, has been incredibly empowering.",
+	'css': "Although CSS can be unpredictable at times, it's always been something I've enjoyed working on. Because every small change produces a visible outcome, the effort is always rewarding.",
+	'javascript': "Learning Javascript (and jQuery) has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
 	'research': "During my time at Reed College (2009&ndash;2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
-	'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers). For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
+	'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers).</p><p>For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
 };
 
 $(".chart-bar").mouseover(function () {
@@ -113,7 +113,7 @@ $("#contact-form").validate({
 function formSubmit() {
 	var email = $("#emailInput").val();
 	var name = $("#nameInput").val();
-	var reason = $("#recipientInput option:selected").text();
+	var reason = $("#recipientInput").find("option:selected").text();
 	var subject = name + " contacted you to say: " + reason;
 	var message = $("#messageInput").val();
 	$.ajax({

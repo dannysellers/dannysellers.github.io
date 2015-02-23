@@ -55,9 +55,11 @@
 				<li class="navbar-item"><a class="navbar-link" href="#skills">Skills</a></li>
 				<li class="navbar-item"><a class="navbar-link" href="#education">Education</a></li>
 				<li class="navbar-item"><a class="navbar-link" href="#contact">Contact Me</a></li>
+				<!--<li class="navbar-item navbar-link">|</li>-->
+				<!--<li class="navbar-item"><a class="navbar-link" href="https://github.com/dannysellers">Github</a></li>-->
+				<!--<li class="navbar-item"><a class="navbar-link" href="https://www.linkedin.com/pub/daniel-sellers">LinkedIn</a></li>-->
 				<li class="navbar-item">
 					<a class="navbar-link" href="#" data-popover="#moreNavPopover">More</a>
-
 					<div id="moreNavPopover" class="popover">
 						<ul class="popover-list">
 							<li class="popover-item">
@@ -82,21 +84,20 @@
 		<div class="seven columns">
 			<h2 class="title">Danny Sellers</h2>
 
-			<p>Hi! That's me, on the left there.</p>
+			<p id="intro-text">Hi! That's me, on the left there.</p>
 
-			<p>I'm an aspiring Django developer based out of Portland, OR. I'm currently a student
-			   at <a href="http://pdxcodeguild.com">PDX Code Guild</a>, where I've been working on some cool
+			<p>I'm an aspiring Django developer based out of Portland, OR. I've just finished studying
+			   at <a href="http://pdxcodeguild.com">PDX Code Guild</a>, where I worked on some cool
 			   projects over the last few months.</p>
 
-			<p>Ultimately, I hope to work with an organization that helps underserved communities through principles of
-			   social enterprise, and uses software-based tools to help overcome social problems. I am specifically
-			   interested in back-end development on projects that affect positive change.</p>
+			<p>Ultimately, I hope to work with an organization that promotes positive social change, and uses
+			   software-based tools to empower individuals. I am specifically interested in back-end development.</p>
 		</div>
 	</div>
 
 	<!-- Portfolio -->
-	<div class="docs-section" id="portfolio">
-		<h4 class="docs-header">Portfolio</h4>
+	<div class="section" id="portfolio">
+		<h4>Portfolio</h4>
 
 		<div class="row">
 			<div class="four columns">
@@ -107,13 +108,13 @@
 				<ul>
 					<li>Django</li>
 					<li>RapidSMS</li>
-					<!--<li><a href="https://www.rapidsms.org">RapidSMS</a></li>-->
+					<!--<li>PostgreSQL</li>-->
 				</ul>
 			</div>
 			<div class="eight columns">
 				<p>This tool is designed to allow people living in temporary settlements to locate resources and
-				   services near them. To compensate for how inconvenient it is to send positional data over SMS,
-				   this project relies on the concept of a 'beacon'&#8212;a point from which directions are
+				   services near them. To compensate for the inconvenience of transmitting positional data over
+				   SMS, this project relies on the concept of a 'beacon'&mdash;a point from which directions are
 				   calculated.</p>
 
 				<p><i>Planned functionality:</i> graphic reports on query metrics, scheduled monitoring and
@@ -131,16 +132,15 @@
 				<strong>Tools used:</strong>
 				<ul>
 					<li>Django</li>
-					<li>PostgreSQL</li>
+					<!--<li>PostgreSQL</li>-->
 				</ul>
 			</div>
 			<div class="eight columns">
-				<p>This tool is intended for tracking accounts and inventory for customers of an order fulfillment
-				   business. It supports tracking accounts, shipments containing cartons, status change operations, and
-				   costs for billing purposes.</p>
+				<p>This tool tracks accounts and inventory for customers of an order fulfillment business.
+				   It supports managing accounts and shipments containing sets of cartons, comprehensive records, and
+				   generating PDF invoices.</p>
 
-				<p><i>Planned functionality:</i> generate (nice-looking) PDF invoices, API-based connection to
-												 front-end site.</p>
+				<p><i>Planned functionality:</i> generate (nice-looking) PDF invoices, API.</p>
 			</div>
 		</div>
 
@@ -173,20 +173,20 @@
 	</div>
 
 	<!-- Experience -->
-	<div class="docs-section" id="skills">
-		<h4 class="docs-header">Skills</h4>
+	<div class="section" id="skills">
+		<h4>Skills</h4>
 
-		<div class="row">
+		<div class="row chart-row">
 			<div class="five columns chart">
-				<div class="chart-bar" style="width: 70%">Python</div>
-				<div class="chart-bar" style="width: 70%">Django</div>
-				<div class="chart-bar" style="width: 60%">HTML</div>
-				<div class="chart-bar" style="width: 50%">CSS</div>
-				<div class="chart-bar" style="width: 50%">Javascript</div>
+				<div class="chart-bar" style="width:70%">Python</div>
+				<div class="chart-bar" style="width:70%">Django</div>
+				<div class="chart-bar" style="width:60%">HTML</div>
+				<div class="chart-bar" style="width:50%">CSS</div>
+				<div class="chart-bar" style="width:50%">Javascript</div>
 				<br/>
 
-				<div class="chart-bar" style="width: 80%">Research</div>
-				<div class="chart-bar" style="width: 70%">Writing</div>
+				<div class="chart-bar" style="width:80%">Research</div>
+				<div class="chart-bar" style="width:70%">Writing</div>
 			</div>
 
 			<div class="seven columns" id="chart-text">
@@ -196,14 +196,15 @@
 	</div>
 
 	<!-- Education -->
-	<div class="docs-section" id="education">
-		<h4 class="docs-header">Education</h4>
+	<div class="section" id="education">
+		<h4>Education</h4>
 
 		<div class="row">
 			<h5>PDX Code Guild</h5>
 
-			<p>This four-month course has been an intensive hands-on experience&#8212;I've learned about Python and
-			   Django, HTML, CSS, Javascript, and some SQL. To see some examples of my work, be sure to check out my
+
+			<p>This four-month course was an intensive hands-on experience&#8212;I learned about Python,
+			   Django, HTML, CSS, Javascript, and SQL. To see some examples of my work, be sure to check out my
 				<a href="#portfolio">Portfolio</a> or my <a href="https://github.com/dannysellers">Github profile</a>.</p>
 			<hr/>
 
@@ -214,8 +215,8 @@
 	</div>
 
 	<!-- Contact form -->
-	<div class="docs-section" id="contact">
-		<h4 class="docs-header">Contact Me</h4>
+	<div class="section" id="contact">
+		<h4>Contact Me</h4>
 
 		<div class="mail-alert" style="display: none;"></div>
 
@@ -263,9 +264,11 @@
 	$().ready(function () {
 		// Changes the chart text based to match the interaction method.
 		if (jQuery.browser.mobile) {
-			$("#chart-text").html("<p>Tap on one my skills listed at left to see more information.</p>")
+			$("#chart-text").html("<p>Tap on one my skills listed at left to see more information.</p>");
+			$("#intro-text").html("Hi! That's me, in the circle there.")
 		} else {
-			$("#chart-text").html("<p>Move your mouse over one my skills listed at left to see more information.</p>")
+			$("#chart-text").html("<p>Move your mouse over one my skills listed at left to see more information.</p>");
+			$("#intro-text").html("Hi! That's me, on the left there.")
 		}
 	});
 

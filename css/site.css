@@ -27,7 +27,7 @@ body {
 	font-family : 'Arimo', fontAwesome, sans-serif;
 }
 
-.docs-section {
+.section {
 	border-top    : 1px solid #eeeeee;
 	padding       : 4rem 0;
 	margin-bottom : 0;
@@ -97,11 +97,17 @@ body {
 	margin-right  : auto;
 }
 
-#contact-form label.error {
+.error {
 	margin-left : 10px;
 	width       : auto;
 	display     : inline;
 	color       : red;
+}
+
+@media (max-width : 754px) {
+	.container {
+		padding-top : 1.5rem;
+	}
 }
 
 /* Larger than phone */
@@ -124,13 +130,8 @@ body {
 		margin-bottom : 1.5rem;
 	}
 
-	.docs-section {
+	.section {
 		padding : 6rem 0;
-	}
-
-	.example-send-yourself-copy {
-		float      : right;
-		margin-top : 12px
 	}
 
 	#headshot {
@@ -140,7 +141,7 @@ body {
 }
 
 /* Larger than tablet */
-@media (min-width : 750px) {
+@media (min-width : 755px) {
 	/* Navbar */
 	.navbar {
 		border-top-width : 0;
@@ -189,7 +190,7 @@ body {
 	}
 
 	.navbar-link.active {
-		color : #33c3f0;
+		color : #3e5d88;
 	}
 
 	.has-docked-nav .navbar {
@@ -239,16 +240,14 @@ body {
 	}
 
 	.popover-item:first-child .popover-link:after {
-		border-color        : rgba(255, 255, 255, 0);
-		border-bottom-color : #ffffff;
-		border-width        : 10px;
+		border-color        : 10px white;
+		/*border-width        : 10px;*/
 		margin-left         : -10px;
 	}
 
 	.popover-item:first-child .popover-link:before {
-		border-color        : rgba(238, 238, 238, 0);
-		border-bottom-color : #eeeeee;
-		border-width        : 11px;
+		border-color        : 11px #eeeeee;
+		/*border-width        : 11px;*/
 		margin-left         : -11px;
 	}
 
@@ -288,12 +287,12 @@ body {
 
 	.popover-link:hover {
 		color      : #ffffff;
-		background : #33c3f0;
+		background : #3e5d88;
 	}
 
 	.popover-link:hover,
 	.popover-item:first-child .popover-link:hover:after {
-		border-bottom-color : #33c3f0;
+		border-bottom-color : #3e5d88;
 	}
 
 	#headshot {
