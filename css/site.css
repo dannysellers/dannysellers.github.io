@@ -1,5 +1,5 @@
 body {
-	font-family : 'Arimo', sans-serif;
+	font-family : 'Noto Sans', sans-serif;
 }
 
 .container {
@@ -104,9 +104,25 @@ body {
 	color       : red;
 }
 
+.show-medium-up {
+	visibility : hidden;
+}
+
+.show-medium-only {
+	visibility : visible;
+}
+
 @media (max-width : 754px) {
 	.container {
 		padding-top : 1.5rem;
+	}
+
+	.show-medium-up {
+		visibility : visible;
+	}
+
+	.show-medium-only {
+		visibility : hidden;
 	}
 }
 
@@ -138,6 +154,14 @@ body {
 		width  : 12rem;
 		height : 12rem;
 	}
+
+	/*.show-medium-up {*/
+		/*visibility : visible;*/
+	/*}*/
+
+	/*.show-medium-only {*/
+		/*visibility : hidden;*/
+	/*}*/
 }
 
 /* Larger than tablet */
