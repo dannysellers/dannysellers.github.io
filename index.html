@@ -2,288 +2,312 @@
 <html lang="en">
 <head>
 
-	<meta charset="utf-8">
-	<title>Danny Sellers | Django Developer</title>
-	<meta name="description" content="Danny Sellers personal portfolio">
-	<meta name="author" content="Danny Sellers">
+    <meta charset="utf-8">
+    <title>Danny Sellers | Django Developer</title>
+    <meta name="description" content="Danny Sellers personal portfolio">
+    <meta name="author" content="Danny Sellers">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript">
-		if (typeof jQuery == 'undefined') {
-			document.write(unescape("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
-		}
-	</script>
-	<script src="js/jquery.validate.js"></script>
-	<script src="js/detectmobilebrowser.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/detectmobilebrowser.js"></script>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/skeleton.css">
-	<link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/site.css">
 
-	<!-- Google Analytics -->
-	<script>
-		(function (i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
-			a = s.createElement(o),
-					m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-31942007-3', 'auto');
-		ga('send', 'pageview');
+        ga('create', 'UA-31942007-3', 'auto');
+        ga('send', 'pageview');
 
-	</script>
+    </script>
 
 </head>
 <body>
 <div class="container" id="top">
-	<div class="navbar-spacer"></div>
-	<nav class="navbar">
-		<div class="container">
-			<ul class="navbar-list">
-				<li class="navbar-item"><a class="navbar-link" href="#top">Home</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#portfolio">Portfolio</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#skills">Skills</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#education">Education</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#contact">Contact Me</a></li>
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item"><a class="navbar-link" href="#top">Home</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="#portfolio">Portfolio</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="#skills">Skills</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="#education">Education</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="#contact">Contact Me</a></li>
 
-				<!--<li class="navbar-item navbar-link show-medium-up">|</li>-->
-				<!--<li class="navbar-item show-medium-up"><a class="navbar-link" href="https://github.com/dannysellers">Github</a></li>-->
-				<!--<li class="navbar-item show-medium-up"><a class="navbar-link" href="https://www.linkedin.com/pub/daniel-sellers">LinkedIn</a></li>-->
+                <!--<li class="navbar-item navbar-link show-medium-up">|</li>-->
+                <!--<li class="navbar-item show-medium-up"><a class="navbar-link" href="https://github.com/dannysellers">Github</a></li>-->
+                <!--<li class="navbar-item show-medium-up"><a class="navbar-link" href="https://www.linkedin.com/pub/daniel-sellers">LinkedIn</a></li>-->
 
-				<li class="navbar-item show-medium-only">
-					<a class="navbar-link" href="#" data-popover="#moreNavPopover">More</a>
-					<div id="moreNavPopover" class="popover">
-						<ul class="popover-list">
-							<li class="popover-item">
-								<a class="popover-link" href="https://github.com/dannysellers">Github</a>
-							</li>
-							<li class="popover-item">
-								<a class="popover-link" href="http://www.linkedin.com/pub/daniel-sellers">LinkedIn</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</nav>
+                <li class="navbar-item show-medium-only">
+                    <a class="navbar-link" href="#" data-popover="#moreNavPopover">More</a>
 
-	<!-- Headshot area -->
-	<div class="row">
-		<div class="five columns">
-			<img src="img/headshot.jpeg" id="headshot">
-		</div>
+                    <div id="moreNavPopover" class="popover">
+                        <ul class="popover-list">
+                            <li class="popover-item">
+                                <a class="popover-link" href="https://github.com/dannysellers"
+                                   target="_blank">Github</a>
+                            </li>
+                            <li class="popover-item">
+                                <a class="popover-link" href="http://www.linkedin.com/pub/daniel-sellers"
+                                   target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-		<div class="seven columns">
-			<h2 class="title">Danny Sellers</h2>
+    <!-- Headshot area -->
+    <div class="row">
+        <div class="five columns">
+            <img src="img/headshot.jpeg" id="headshot">
+        </div>
 
-			<p id="intro-text">Hi! That's me, on the left there.</p>
+        <div class="seven columns">
+            <h2 class="title">Danny Sellers</h2>
 
-			<p>I'm an aspiring Django developer based out of Portland, OR. I've just finished studying
-			   at <a href="http://pdxcodeguild.com">PDX Code Guild</a>, where I worked on some cool
-			   projects over the last few months.</p>
+            <p id="intro-text">Hi! That's me, on the left there.</p>
 
-			<p>Ultimately, I hope to work with an organization that promotes positive social change, and uses
-			   software-based tools to empower individuals. I am specifically interested in back-end development.</p>
-		</div>
-	</div>
+            <p>I'm a Django developer based out of Portland, OR. I've just finished studying
+                at <a href="http://pdxcodeguild.com">PDX Code Guild</a>, where I worked on some cool
+                projects over the last few months.</p>
 
-	<!-- Portfolio -->
-	<div class="section" id="portfolio">
-		<h4>Portfolio</h4>
+            <p>Ultimately, I hope to work with an organization that promotes positive social change, and uses
+                software-based tools to empower individuals. I am specifically interested in back-end development.</p>
+        </div>
+    </div>
 
-		<div class="row">
-			<div class="four columns">
+    <!-- Portfolio -->
+    <div class="section" id="portfolio">
+        <h4>Portfolio</h4>
+
+        <div class="row">
+            <div class="four columns">
 				<span class="project-span" id="rapidsms_locator">
 					<a href="https://github.com/dannysellers/rapidsms_service-locator">SMS-based Service Locator</a>
 				</span><br/>
-				<strong>Tools & Stack:</strong>
-				<ul>
-					<li>Django</li>
-					<li>RapidSMS</li>
-					<li>PostgreSQL</li>
-					<li>jQuery</li>
-					<li>Bootstrap</li>
-				</ul>
-			</div>
-			<div class="eight columns">
-				<p>This tool is designed to allow people living in temporary settlements to locate resources and
-				   services near them. To compensate for the inconvenience of transmitting positional data over
-				   SMS, this project relies on the concept of a 'beacon'&mdash;a point from which directions are
-				   calculated.</p>
+                <strong>Tools & Stack:</strong>
+                <ul>
+                    <li>Django</li>
+                    <li>RapidSMS</li>
+                    <li>PostgreSQL</li>
+                    <li>jQuery</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="eight columns">
+                <p>This tool is designed to allow people living in temporary settlements to locate resources and
+                    services near them. To compensate for the inconvenience of transmitting positional data over
+                    SMS, this project relies on the concept of a 'beacon'&mdash;a point from which directions are
+                    calculated.</p>
 
-				<p><i>Planned functionality:</i> graphic reports on query metrics, scheduled monitoring and
-												 threshold-based alerts.</p>
+                <p><i>Planned functionality:</i> graphic reports on query metrics, scheduled monitoring and
+                    threshold-based alerts.</p>
 
-				<a href="http://52.10.210.47/" target="_blank" class="button button-primary">Demo</a>
-				<a href="https://github.com/dannysellers/rapidsms_service-locator" class="button button-primary">Code</a>
-			</div>
-		</div>
+                <a href="https://github.com/dannysellers/rapidsms_service-locator"
+                   class="button button-primary">Code</a>
+                <a href="http://52.10.210.47/" target="_blank" class="button button-primary">Demo</a>
+            </div>
+        </div>
 
-		<hr/>
+        <hr/>
 
-		<div class="row">
-			<div class="four columns">
+        <div class="row">
+            <div class="four columns">
 				<span class="project-span" id="django_order">
 					<a href="https://github.com/dannysellers/django_orders">Order Fulfillment Inventory Tracker</a>
 				</span><br/>
-				<strong>Tools & Stack:</strong>
-				<ul>
-					<li>Django</li>
+                <strong>Tools & Stack:</strong>
+                <ul>
+                    <li>Django</li>
                     <li>Django REST Framework</li>
-					<li>PostgreSQL</li>
-					<li>jQuery</li>
-					<li>Foundation</li>
-				</ul>
-			</div>
-			<div class="eight columns">
-				<p>This tool tracks accounts and inventory for customers of an order fulfillment business.
-				   It supports managing accounts and shipments containing sets of cartons, comprehensive records, and
-				   generating PDF invoices.</p>
+                    <li>PostgreSQL</li>
+                    <li>jQuery</li>
+                    <li>Foundation</li>
+                </ul>
+            </div>
+            <div class="eight columns">
+                <p>This tool tracks accounts and inventory for customers of an order fulfillment business.
+                    It supports managing accounts and shipments containing sets of cartons, comprehensive records, and
+                    generating PDF invoices.</p>
 
-				<p><i>Planned functionality:</i> generate (nice-looking) PDF invoices, API.</p>
+                <a href="https://github.com/dannysellers/django_orders" class="button button-primary">Code</a>
+                <a href="http://52.10.84.228/" target="_blank" class="button button-primary">Demo</a>
+            </div>
+        </div>
 
-				<a href="http://52.10.84.228/" target="_blank" class="button button-primary">Demo</a>
-				<a href="https://github.com/dannysellers/django_orders" class="button button-primary">Code</a>
-			</div>
-		</div>
+        <div class="row">
+            <div class="four columns">
+                <span class="project-span" id="backbone_order">
+                    <a href="https://github.com/dannysellers/backbone_orders">Order Fulfillment Website</a>
+                </span><br/>
+                <strong>Tools & Stack:</strong>
+                <ul>
+                    <li>Backbone.js</li>
+                    <li>jQuery</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="eight columns">
+                <br/>Accompanying the above API is a Backbone.js-based site intended for end-users to gather information
+                about their account. In addition to displaying a user's current and past inventory, it supports
+                submitting work orders and generating PDF invoices.</p>
+                <a href="https://github.com/dannysellers/backbone_orders" class="button button-primary">Code</a>
+            </div>
+        </div>
 
-		<hr/>
+        <hr/>
 
-		<div class="row">
-			<div class="four columns">
+        <div class="row">
+            <div class="four columns">
 				<span class="project-span" id="thesis">
 					<a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>
-						Accountability Without Democracy: Lessons from African Famines in the 1980s</a>
+                        Accountability Without Democracy: Lessons from African Famines in the 1980s</a>
 				</span><!-- <br/>
 				<strong>Tools used:</strong>
 				<ul>
 					<li>Research skills</li>
 					<li>LaTeX</li>
 				</ul> -->
-			</div>
-			<div class="eight columns">
-				<p>This work investigates the theoretical correlation between a country’s freedom of press, competitive
-				   elections, and their ability to avert famine, elucidating a theory from development economist Amartya
-				   Sen.</p>
+            </div>
+            <div class="eight columns">
+                <p>This work investigates the theoretical correlation between a country’s freedom of press, competitive
+                    elections, and their ability to avert famine, elucidating a theory from development economist
+                    Amartya
+                    Sen.</p>
 
-				<p>Initally written during my final year at Reed College, this paper it served as my senior thesis.
-				   More recently, it was
-					<a href="http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/">published</a>
-				   in the Spring 2014 edition of the Columbia Journal of Politics & Society.
-			</div>
-		</div>
+                <p>Initally written during my final year at Reed College, this paper it served as my senior thesis.
+                    More recently, it was
+                    <a href="http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/">published</a>
+                    in the Spring 2014 edition of the Columbia University Journal of Politics & Society.
+            </div>
+        </div>
 
-	</div>
+    </div>
 
-	<!-- Experience -->
-	<div class="section" id="skills">
-		<h4>Skills</h4>
+    <!-- Experience -->
+    <div class="section" id="skills">
+        <h4>Skills</h4>
 
-		<div class="row chart-row">
-			<div class="five columns chart">
-				<div class="chart-bar" style="width:70%">Python</div>
-				<div class="chart-bar" style="width:70%">Django</div>
-				<div class="chart-bar" style="width:60%">HTML</div>
-				<div class="chart-bar" style="width:50%">CSS</div>
-				<div class="chart-bar" style="width:50%">Javascript</div>
-				<br/>
+        <div class="row chart-row">
+            <div class="five columns chart">
+                <div class="chart-bar" style="width:70%">Python</div>
+                <div class="chart-bar" style="width:70%">Django</div>
+                <div class="chart-bar" style="width:65%">HTML</div>
+                <div class="chart-bar" style="width:60%">CSS</div>
+                <div class="chart-bar" style="width:60%">Javascript</div>
+                <br/>
 
-				<div class="chart-bar" style="width:80%">Research</div>
-				<div class="chart-bar" style="width:70%">Writing</div>
-			</div>
+                <div class="chart-bar" style="width:80%">Research</div>
+                <div class="chart-bar" style="width:70%">Writing</div>
+            </div>
 
-			<div class="seven columns" id="chart-text">
-				<p>Move your mouse over one my skills listed at left to see more information.</p>
-			</div>
-		</div>
-	</div>
+            <div class="seven columns" id="chart-text">
+                <p>Move your mouse over one my skills listed at left to see more information.</p>
+            </div>
+        </div>
+    </div>
 
-	<!-- Education -->
-	<div class="section" id="education">
-		<h4>Education</h4>
+    <!-- Education -->
+    <div class="section" id="education">
+        <h4>Education</h4>
 
-		<div class="row">
-			<h5>PDX Code Guild</h5>
+        <div class="row">
+            <h5>PDX Code Guild</h5>
 
             2014 &ndash; 2015
             <p>This four-month course was an intensive hands-on experience&#8212;I learned about Python,
-			   Django, HTML, CSS, Javascript, and SQL. To see some examples of my work, be sure to check out my
-				<a href="#portfolio">Portfolio</a> or my <a href="https://github.com/dannysellers">Github profile</a>.</p>
-			<hr/>
+                Django, HTML, CSS, Javascript, and SQL. To see some examples of my work, be sure to check out my
+                <a href="#portfolio">Portfolio</a> or my <a href="https://github.com/dannysellers">Github profile</a>.
+            </p>
+            <hr/>
 
-			<h5>Reed College</h5>
-			B.A., Political Science<br/>
-			May 2013
-		</div>
-	</div>
+            <h5>Reed College</h5>
+            B.A., Political Science<br/>
+            May 2013
+        </div>
+    </div>
 
-	<!-- Contact form -->
-	<div class="section" id="contact">
-		<h4>Contact Me</h4>
+    <!-- Contact form -->
+    <div class="section" id="contact">
+        <h4>Contact Me</h4>
 
-		<div class="mail-alert" style="display: none;"></div>
+        <div class="mail-alert" style="display: none;"></div>
 
-		<p>Send me a message, and I promise to respond like a real person!</p>
+        <p>Send me a message, and I promise to respond like a real person!</p>
 
-		<form id="contact-form" method="post" action="">
-			<div class="row">
-				<div class="four columns">
-					<label for="nameInput">Your name</label>
-					<input class="u-full-width" type="text" placeholder="Your name" id="nameInput"
-						   data-rule-required="true" data-rule-minlength="2"
-						   data-msg-minlength="Please enter your name."
-						   data-msg-required="">
-				</div>
-				<div class="four columns">
-					<label for="emailInput">Your email</label>
-					<input class="u-full-width" type="email" placeholder="email@address.com" id="emailInput"
-						   data-rule-required="true" data-rule-email="true"
-						   data-msg-email="Please enter a valid email address."
-						   data-msg-required="">
-				</div>
-				<div class="four columns">
-					<label for="recipientInput">Hi, I'd like to&hellip;</label>
-					<select class="u-full-width" id="recipientInput">
-						<option value="hire-me-plz">...hire you immediately!</option>
-						<option value="question">...ask you a question.</option>
-						<option value="hello">...just say hi!</option>
-					</select>
-				</div>
-			</div>
-			<label for="messageInput">Please, go on:</label>
-			<textarea class="u-full-width" placeholder="Hi Danny &hellip;" id="messageInput"></textarea>
+        <form id="contact-form" method="post" action="">
+            <div class="row">
+                <div class="four columns">
+                    <label for="nameInput">Your name</label>
+                    <input class="u-full-width" type="text" placeholder="Your name" id="nameInput"
+                           data-rule-required="true" data-rule-minlength="2"
+                           data-msg-minlength="Please enter your name."
+                           data-msg-required="">
+                </div>
+                <div class="four columns">
+                    <label for="emailInput">Your email</label>
+                    <input class="u-full-width" type="email" placeholder="email@address.com" id="emailInput"
+                           data-rule-required="true" data-rule-email="true"
+                           data-msg-email="Please enter a valid email address."
+                           data-msg-required="">
+                </div>
+                <div class="four columns">
+                    <label for="recipientInput">Hi, I'd like to&hellip;</label>
+                    <select class="u-full-width" id="recipientInput">
+                        <option value="hire-me-plz">...hire you immediately!</option>
+                        <option value="question">...ask you a question.</option>
+                        <option value="hello">...just say hi!</option>
+                    </select>
+                </div>
+            </div>
+            <label for="messageInput">Please, go on:</label>
+            <textarea class="u-full-width" placeholder="Hi Danny &hellip;" id="messageInput"></textarea>
 
-			<div class="submit">
-				<input type="submit" id="email-submit" class="button-primary fa-styled submit" value="&#xf003 Submit"/>
-			</div>
-		</form>
-	</div>
+            <div class="submit">
+                <input type="submit" id="email-submit" class="button-primary fa-styled submit" value="&#xf003 Submit"/>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script src="js/site.js"></script>
 
 <script>
 
-	$().ready(function () {
-		// Changes the chart text based to match the interaction method.
-		if (jQuery.browser.mobile) {
-			$("#chart-text").html("<p>Tap on one my skills listed at left to see more information.</p>");
-			$("#intro-text").html("Hi! That's me, in the circle there.")
-		} else {
-			$("#chart-text").html("<p>Move your mouse over one my skills listed at left to see more information.</p>");
-			$("#intro-text").html("Hi! That's me, on the left there.")
-		}
-	});
+    $().ready(function () {
+        // Changes the chart text based to match the interaction method.
+        if (jQuery.browser.mobile) {
+            $("#chart-text").html("<p>Tap on one my skills listed at left to see more information.</p>");
+            $("#intro-text").html("Hi! That's me, in the circle there.")
+        } else {
+            $("#chart-text").html("<p>Move your mouse over one my skills listed at left to see more information.</p>");
+            $("#intro-text").html("Hi! That's me, on the left there.")
+        }
+    });
 
 </script>
 

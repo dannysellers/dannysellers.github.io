@@ -42,6 +42,15 @@ body {
     padding-left          : 50px;
 }
 
+.project-span#backbone_order {
+    background            : url('../img/icons/window.png') no-repeat;
+    display               : inline-block;
+    background-position-y : 50%;
+    background-size       : 40px 40px;
+    height                : inherit;
+    padding-left          : 50px;
+}
+
 .project-span#rapidsms_locator {
     background            : url('../img/icons/phone.png') no-repeat;
     display               : inline-block;
@@ -108,6 +117,10 @@ body {
     visibility : visible;
 }
 
+li {
+    margin-bottom : 0.25rem;
+}
+
 /* Larger than phone */
 @media (min-width : 550px) {
     .header {
@@ -149,6 +162,10 @@ body {
 
     .show-medium-only {
         visibility : hidden;
+    }
+
+    li {
+        margin-bottom : 0.5rem;
     }
 }
 

@@ -71,12 +71,12 @@ $(function () {
 });
 
 chart_dict = {
-	'python': "I've been working with Python since 2014, when I launched into Codecademy's course on the language. Initially drawn by the approachability of the syntax, I quickly came to appreciate the power Python affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue to use it for a long time.",
+	'python': "Initially drawn by the approachability of Python's syntax, I quickly came to appreciate the power it affords and began writing scripts.</p><p>After discovering PDX Code Guild, I enrolled in their Python-based 'boot camp,' where I learned a tremendous amount about Python, Django, and other technologies. Python is truly a joy to use, and I hope I can continue with it for a long time.",
 	'django': "Since studying at PDX Code Guild, I have worked extensively with Django, including the projects mentioned in the Portfolio section of this page.",
 	'html': "I've been familiar with HTML for a number of years, and have created a number of static websites. Learning templating languages and server-side scripting, though, has been incredibly empowering.",
-	'css': "Although CSS can be unpredictable at times, it's always been something I've enjoyed working on. Because every small change produces a visible outcome, the effort is always rewarding.",
-	'javascript': "Learning Javascript (and jQuery) has been tremendously useful in making web applications more interactive. It's an interesting language I'm excited to learn more about.",
-	'research': "During my time at Reed College (2009&ndash;2013), I undertook a number of lengthy research projects, including a semester-long policy research paper and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
+	'css': "Although CSS can be unpredictable at times, it's always been something I've enjoyed working on. Because every small change produces a visible outcome, the effort is perpetually rewarded.",
+	'javascript': "Learning Javascript&mdash;including jQuery and Backbone&mdash;has been tremendously useful in making rich web applications. It's an interesting language I'm excited to learn more about.",
+	'research': "During my time at Reed College, I undertook a number of lengthy research projects, including a semester-long policy literature review and a year-long senior thesis.</p><p>For more information on my thesis, visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>",
 	'writing': "Throughout my time in school, I wrote many, many papers (primarily research papers).</p><p>For a sample of my writing, please visit <a href='http://www.helvidius.org/essays/accountability-without-democracy-lessons-from-african-famines-in-the-1980s/'>this site.</a>"
 };
 
