@@ -121,6 +121,11 @@ li {
     margin-bottom : 0.25rem;
 }
 
+.sub-hr {
+    margin-top    : 0;
+    margin-bottom : 2rem;
+}
+
 /* Larger than phone */
 @media (min-width : 550px) {
     .header {
