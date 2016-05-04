@@ -146,7 +146,7 @@ function formSubmit() {
 		$("#messageInput").val('');
 	}).fail(function (jqXHR, textStatus, errorThrown) {
 		$('.mail-alert').css('background-color', '#FF858F')
-			.html("Sorry, there was a problem! (" + textStatus + ")<br/>Please feel free to email me directly at dsellers90 [at] gmail [dot] com.")
+			.html("Sorry, there was a problem! (" + textStatus + ")<br/>Please reach out to me directly at dsellers90 [at] gmail [dot] com.")
 			.show();
 	});
 	return false;
